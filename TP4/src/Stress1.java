@@ -12,8 +12,9 @@ public class Stress1 {
             Socket s = new Socket("localhost", 1234);
             OutputStream out = s.getOutputStream();
             out.write(bytes);
-            s.close();
             x++;
         }
+        float time2 = System.nanoTime();
+        System.out.println("le temps est : " + time2);
     }
 }

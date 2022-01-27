@@ -14,7 +14,8 @@ public class Handler implements Runnable{
         try {
             InputStream is = s.getInputStream();
             String s = new String(String.valueOf(is));
-            System.out.println(s);
+            data = data + s;
+            System.out.println(data);
         } catch (IOException e) {
             e.printStackTrace();
         }
