@@ -12,21 +12,21 @@ public class Stress1 {
         int x = 0;
         String str = "ok le S";
         byte[] bytes = str.getBytes();
-        Long start = System.nanoTime();
+        float start = System.nanoTime();
         while (x != n){
             Socket s = new Socket("localhost", 1234);
             OutputStream out = s.getOutputStream();
             out.write(bytes);
-            //s.close();
+            s.close();
             x++;
         }
         Long[] tab = new Long[2];
-        Long finish = System.nanoTime();
-        Long time = finish - start;
+        float finish = System.nanoTime();
+        float time = finish - start;
         //tab[0] = new Long(n);
         //tab[1] = time;
         //Data.valeur_sans_close.add(tab);
         //System.out.println("taille de la liste : " + Data.valeur_sans_close.size());
-        System.out.println("le temps sans s.close est : " + time + " pour : " + n );
+        System.out.println("le temps avec s.close et voleur est : " + time/1000000000 + " pour : " + n );
     }
 }
